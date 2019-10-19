@@ -17,20 +17,20 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Enregistrement',
-      url: '/list',
-      icon: 'list'
-    }
-    ,
-    {
-      title: 'Transaction',
-      url: '/transaction',
+      title: 'Nos Agences',
+      url: '/agences',
       icon: 'list'
     },
     {
+      title: 'Operation',
+      url: '/operation',
+      icon: 'card'
+    },
+    
+    {
       title: 'Compte',
       url: '/compte',
-      icon: 'list'
+      icon: 'contact'
     }
   ];
 

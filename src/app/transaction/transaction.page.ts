@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-transaction',
@@ -12,7 +14,7 @@ export class TransactionPage implements OnInit {
   scannedCode = null;
   elementType : 'url' | 'canvas' | 'img' = 'canvas';
 
-  constructor(private BarcodeScanner: BarcodeScanner, private toastCtrl: ToastController) { }
+  constructor(private BarcodeScanner: BarcodeScanner, private base64ToGallery: Base64ToGallery, private toastCtrl: ToastController) { }
 
   ngOnInit() {
   }
@@ -25,8 +27,8 @@ export class TransactionPage implements OnInit {
     }
 
     downloadQR(){
-     /* const canvas = document.querySelector('canvas') as HTMLCanvasElement;
-      const imageData = canvas.toDataURL('imge/jpeg').toString();
+     const canvas = document.querySelector('canvas') as HTMLCanvasElement;
+      const imageData = canvas.toDataURL('image/jpeg').toString();
       console.log('data',imageData);
 
       let data = imageData.split(',')[1];
@@ -36,7 +38,7 @@ export class TransactionPage implements OnInit {
         });
         toast.present();
       },err => console.log('error',err)
-      );*/
+      );
       
     }
 

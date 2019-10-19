@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
     <ion-title>
-      Enregistrement
+      S'enregistrer
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,11 +13,16 @@
 
     <ion-item>
       <ion-label floating></ion-label>
-      <ion-input type="text" placeholder="Prenom" color="primary"></ion-input>
+     
+      <ion-input type="text" placeholder="Nom" color="success" style="margin-top: 30%"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating></ion-label>
-      <ion-input type="number" placeholder="Numero Telephone" color="primary"></ion-input>
+      <ion-input type="text" placeholder="Prenom" color="success"></ion-input>
     </ion-item>
-    <ion-button expand="full" color="primary">Valider</ion-button>
+    <ion-item>
+      <ion-label floating></ion-label>
+      <ion-input type="number" placeholder="Numero Telephone" color="success"></ion-input>
+    </ion-item>
+    <ion-button expand="full" color="primary">Enregistrer</ion-button>
 </ion-content>
