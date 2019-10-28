@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'transaction', loadChildren: './transaction/transaction.module#TransactionPageModule' },
   { path: 'operation', loadChildren: './operation/operation.module#OperationPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'agences', loadChildren: './agences/agences.module#AgencesPageModule' }
+  { path: 'agences', loadChildren: './agences/agences.module#AgencesPageModule' },
+  { path: 'details', loadChildren: './details/details.module#DetailsPageModule' }
 ];
 
 @NgModule({

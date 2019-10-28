@@ -10,19 +10,18 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
-    <ion-item>
-      <ion-label floating></ion-label>
-     
-      <ion-input type="text" placeholder="Nom" color="success" style="margin-top: 30%"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating></ion-label>
-      <ion-input type="text" placeholder="Prenom" color="success"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating></ion-label>
-      <ion-input type="number" placeholder="Numero Telephone" color="success"></ion-input>
-    </ion-item>
-    <ion-button expand="full" color="primary">Enregistrer</ion-button>
+    <ion-list lines="none">
+      <form [formGroup]="registerForm">
+      <ion-item>
+        <ion-label floting></ion-label>
+        <ion-input type="email" formControlName="email" placeholder="Email"  color="success" style="margin-top: 30%"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating></ion-label>
+        <ion-input type="password" formControlName="password" placeholder="Mot de passe"  color="success"></ion-input>
+      </ion-item>     
+      <ion-button expand="full" color="primary" (click)="register()">Connexion</ion-button>
+      </form>
+    </ion-list>
 </ion-content>
+

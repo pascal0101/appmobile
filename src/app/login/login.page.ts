@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import {AuthService} from '../services/auth.service';
+import { FormGroup,FormControl } from '@angular/forms';
+import {ModalController} from '@ionic/angular';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -7,15 +11,21 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public afDB: AngularFireDatabase) { }
+  public loginForm: FormGroup;
 
+  
+  constructor(public modelController:ModalController,public authservice:AuthService) {
+        this.loginForm= new FormGroup({
+
+          email: new FormControl(),
+          password : new FormControl(),
+        });
+   }
+
+    async login(){
+      await this.authservice.login(this.loginForm.value["email"],this.loginForm.value["password"]);
+    }
+   
   ngOnInit() {
   }
-
-  add() {
-    this.afDB.list('Users').push({
-      pseudo: 'drissas'
-    });
-  }
-
 }

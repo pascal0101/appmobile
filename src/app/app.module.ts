@@ -38,7 +38,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule
-    
+     
   ],
   providers: [
     StatusBar,
