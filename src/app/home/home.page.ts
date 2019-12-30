@@ -42,11 +42,12 @@ export class HomePage {
       this.propertyList = json.properties;
       this.leafletMap();
     });
-    /*this.map.polygon([
+    this.map.polygon([
       [51.509, -0.08],
       [51.503, -0.06],
       [51.51, -0.047]
     ]).addTo(this.map);
+    /*
     Routing.control({
       waypoints: [
         this.map.latLong = [6.212069, 1.1875334],
