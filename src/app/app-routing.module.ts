@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'operation', loadChildren: './operation/operation.module#OperationPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'agences', loadChildren: './agences/agences.module#AgencesPageModule' },
+  { path: 'details/:id', loadChildren: './details/details.module#DetailsPageModule' },
   { path: 'details', loadChildren: './details/details.module#DetailsPageModule' }
 ];
 

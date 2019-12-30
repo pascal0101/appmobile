@@ -1,9 +1,27 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title>details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+    <ion-list lines="full"> 
+      
+        <ion-item *ngIf="agence"> 
+          <ion-item>
+            <ion-input required type="text"  [(ngModel)]="agence.Nom"></ion-input>
+          </ion-item>
 
+          <ion-item>
+            <ion-input required type="text"  [(ngModel)]="agence.Lieu"></ion-input>
+          </ion-item>
+          
+        </ion-item>
+        
+       
+      
+      </ion-list>
 </ion-content>

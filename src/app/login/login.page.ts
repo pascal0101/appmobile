@@ -13,10 +13,8 @@ export class LoginPage implements OnInit {
 
   public loginForm: FormGroup;
 
-  
   constructor(public modelController:ModalController,public authservice:AuthService) {
         this.loginForm= new FormGroup({
-
           email: new FormControl(),
           password : new FormControl(),
         });

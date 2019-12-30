@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,9 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <div id="myMap" style="width: 100%; height: 80%"></div>
+  <ion-button expand="full" color="success" (click)="getPositions()">Ma Position</ion-button>
 
-<div id="myMap" style="width: 100%; height: 80%"></div>
-<ion-button (click)="getPositions()">
-  Ma Position
-</ion-button>
 </ion-content>
