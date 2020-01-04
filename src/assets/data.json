@@ -1,27 +1,27 @@
 {
     "properties" : [
     {
-        "city": "Cambridge",
+        "city": "Palacio",
         "state" : "MA",
-        "long": -71.10858,
-        "lat": 42.35963
+        "long": 1.211401,
+        "lat": 6.275655
     },
     {
-        "city": "Cambridge",
+        "city": "Sanol Togblé",
         "state": "MA",
-        "long": -71.10869,
-        "lat": 42.359103
+        "long": 1.210885,
+        "lat":  6.273526 
     },
     {
-        "city": "Boston",
+        "city": "Station adétikopé",
         "state": "MA",
-        "long": -71.110061,
-        "lat": 42.360686
+        "long": 1.210090,
+        "lat": 6.268933
     },
     {
-        "city": "Cambridge",
-        "long": -71.110448,
-        "lat": 42.360642
+        "city": "Golfe",
+        "long": 1.207912, 
+        "lat": 6.263467
     }
     ]
  }

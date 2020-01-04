@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Map, tileLayer, marker, polyline, control, Routing } from "leaflet";
+import { Map, tileLayer, marker, polyline, control, Routing, circle } from "leaflet";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController } from '@ionic/angular';
 import { present } from '@ionic/core/dist/types/utils/overlays';
@@ -35,18 +35,20 @@ export class HomePage {
   }
   showMap() {
     //this.map = new Map('myMap').setView([6.212069, 1.1875334], 10);
-    this.map = new Map('myMap').setView([42.35663, -71.1109], 16);
+    this.map = new Map('myMap').setView([6.176197, 1.214317], 16);
     tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
     fetch('./assets/data.json').then(res => res.json())
-    .then(json => {
-      this.propertyList = json.properties;
-      this.leafletMap();
-    });
-    this.map.polygon([
-      [51.509, -0.08],
-      [51.503, -0.06],
-      [51.51, -0.047]
-    ]).addTo(this.map);
+      .then(json => {
+        this.propertyList = json.properties;
+        this.leafletMap();
+      });
+    circle([6.212069, 1.1875335], {
+      color: "red",
+      fillColor: "#f03",
+      fillOpacity: 0.5,
+      radius: 50.0
+    }).addTo(this.map);
+
     /*
     Routing.control({
       waypoints: [
@@ -85,19 +87,19 @@ export class HomePage {
   }
 
 
-      ionViewDidEnter() {
-        this.afAuth.authState.subscribe(data => {
-          if (data && data.email && data.uid) {
-            this.toast.create({
-              message: 'Bienvenue,${data.email}',
-              duration: 3000
-            });
-          } else {
-            this.toast.create({
-              message: 'Vous n etes pas connecté',
-              duration: 3000
-            });
-          }
-        })
+  ionViewDidEnter() {
+    this.afAuth.authState.subscribe(data => {
+      if (data && data.email && data.uid) {
+        this.toast.create({
+          message: 'Bienvenue,${data.email}',
+          duration: 3000
+        });
+      } else {
+        this.toast.create({
+          message: 'Vous n etes pas connecté',
+          duration: 3000
+        });
       }
+    })
+  }
 }

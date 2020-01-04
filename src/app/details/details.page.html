@@ -10,17 +10,21 @@
 <ion-content class="ion-padding">
     <ion-list lines="full"> 
       
-        <ion-item *ngIf="agence"> 
+       
+        <ion-list>
+         
           <ion-item>
-            <ion-input required type="text"  [(ngModel)]="agence.Nom"></ion-input>
+            <ion-icon slot="end" name="bookmark"></ion-icon>
+            <ion-label>Nom agence</ion-label>
+            <ion-badge color="success">{{agence.Nom}}</ion-badge>
           </ion-item>
-
+  
           <ion-item>
-            <ion-input required type="text"  [(ngModel)]="agence.Lieu"></ion-input>
+            <ion-icon slot="end" name="pin"></ion-icon>
+            <ion-label>Lieu</ion-label>
+            <ion-badge color="success">{{agence.Lieu}}</ion-badge>
           </ion-item>
-          
-        </ion-item>
-        
+        </ion-list>
        
       
       </ion-list>

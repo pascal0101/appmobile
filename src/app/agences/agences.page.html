@@ -12,14 +12,16 @@
       
         <ion-item-sliding *ngFor="let agence of agences">
         <ion-item lines="inset" button [routerLink]="['/details',agence.id]"> 
+          <ion-icon slot="end" name="arrow-dropright"></ion-icon>
           <ion-label>
             {{agence.Nom}}    
           </ion-label>
+          <ion-badge color="success">{{agence.Lieu}}</ion-badge>
         </ion-item>
-        <ion-item><ion-badge color="secondary">{{agence.Lieu}}</ion-badge></ion-item>
+      
         <ion-item-options side="end">
             <ion-item-option (click)="onRemove(item)" color="secondary">
-              <ion-icon name="checkmark" slot="end"></ion-icon>
+              <ion-icon name="success" slot="end"></ion-icon>
             </ion-item-option>
         </ion-item-options>
         </ion-item-sliding>
