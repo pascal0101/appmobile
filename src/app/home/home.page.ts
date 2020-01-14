@@ -42,7 +42,7 @@ export class HomePage {
         this.propertyList = json.properties;
         this.leafletMap();
       });
-    circle([6.212069, 1.1875335], {
+    /*circle([6.212069, 1.1875335], {
       color: "red",
       fillColor: "#f03",
       fillOpacity: 0.5,

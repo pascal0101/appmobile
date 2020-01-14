@@ -12,6 +12,7 @@ export class AgencesPage implements OnInit {
 
   ngOnInit() {
     this.agenceService.getAgences().subscribe(res => this.agences = res);
+    
   }
 
 }
