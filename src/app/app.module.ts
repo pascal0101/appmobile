@@ -17,6 +17,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFirestoreModule}  from '@angular/fire/firestore';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA6fQsRffiFWq7nRGkPr-8RnZz9S5Ay2kk",
@@ -47,7 +48,8 @@ export const firebaseConfig = {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     BarcodeScanner,
     Base64ToGallery,
-    Geolocation
+    Geolocation,
+    InAppBrowser
   ],
   bootstrap: [AppComponent]
 })

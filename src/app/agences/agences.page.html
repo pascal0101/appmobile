@@ -8,8 +8,10 @@
 </ion-header>
 
 <ion-content>
-    <ion-list >
-      
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-list>
         <ion-item-sliding *ngFor="let agence of agences">
         <ion-item lines="inset" button [routerLink]="['/details',agence.id]"> 
           <ion-icon slot="end" name="arrow-dropright"></ion-icon>

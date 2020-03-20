@@ -37,6 +37,7 @@ export class AuthService {
       async logout(){
         await this.afAuth.auth.signOut().then(()=>{
           console.log("logget out");
+         
         }).catch((error)=>{
           console.log(error);
         });

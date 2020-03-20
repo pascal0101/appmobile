@@ -3,7 +3,6 @@ import {Agence} from '../interfaces/agence';
 import {AgenceService} from '../services/agence.service';
 import {ActivatedRoute} from '@angular/router';
 import {NavController, LoadingController} from '@ionic/angular';
-
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Map, tileLayer, marker, polyline, control, Routing, circle } from "leaflet";
 import { present } from '@ionic/core/dist/types/utils/overlays';
@@ -35,13 +34,13 @@ export class DetailsPage implements OnInit {
   constructor(private route : ActivatedRoute, private nav : NavController,
      private agenceService : AgenceService, private loadingController : LoadingController,private geolocation: Geolocation) { }
 
-     ionViewWillEnter() {
-      this.showMap();
+     ngOnInit() {
+     
     }
     
    
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.AgenceId = this.route.snapshot.params['id'];
             if(this.AgenceId){
               this.loadAgence();
@@ -62,7 +61,7 @@ export class DetailsPage implements OnInit {
           
           console.log(this.longitude,this.latitude);
           //this.map = new Map('myMap').setView([6.212069, 1.1875334], 10);
-          this.map = new Map('myMap').setView([this.latitude,this.longitude], 16);
+          this.map = new Map('myMap').setView([this.latitude,this.longitude], 13);
           tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
           marker([this.latitude,this.longitude]).addTo(this.map)
           .bindPopup('<a target="_blank" href="http://maps.google.com/maps?q=6.176197,1.214317">Se rendre</a>')

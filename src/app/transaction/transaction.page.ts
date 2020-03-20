@@ -10,7 +10,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./transaction.page.scss'],
 })
 export class TransactionPage implements OnInit {
-  qrData = 'https://ionicacademy.com/';
+  qrData = 'https://google.com/';
   scannedCode = null;
   elementType : 'url' | 'canvas' | 'img' = 'canvas';
 

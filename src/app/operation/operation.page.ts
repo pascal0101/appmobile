@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-operation',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperationPage implements OnInit {
 
-  constructor() { }
+
+
+
+  constructor(private iab: InAppBrowser) { }
+
+  openBlank() {
+    this.iab.create('https://paygateglobal.com', '_blank');
+  }
+  
+  openSystem() {
+    this.iab.create('https://paygateglobal.com', '_system');
+  }
 
   ngOnInit() {
   }

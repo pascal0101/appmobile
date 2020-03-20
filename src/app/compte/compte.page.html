@@ -7,20 +7,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-    
-  <ion-list>
-         
-    <ion-item>
-      <ion-icon slot="end" name="bookmark"></ion-icon>
-      <ion-label>Nom</ion-label>
-      <ion-badge color="secondary">Nom</ion-badge>
-    </ion-item>
 
+  
+    <ng-template #loginItems>  
+      <ion-card>
+          <ion-card-header>
+            <ion-card-title>vous n'êtes pas connecté</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+    </ng-template>
+
+  <ion-list>
+     <section *ngIf="(afAuth.user | async ) as user; else loginItems">
     <ion-item>
       <ion-icon slot="end" name="bookmark"></ion-icon>
       <ion-label>Email</ion-label>
-      <ion-badge color="secondary">Email</ion-badge>
+      <ion-badge color="secondary">{{user.email}}</ion-badge>
     </ion-item>
+    </section>
   </ion-list>
     
 <ion-button expand="full" color="danger" style="margin-top: 100%" (click)="logout()">Deconnexion</ion-button> 

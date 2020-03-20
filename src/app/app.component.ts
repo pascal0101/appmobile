@@ -15,12 +15,12 @@ export class AppComponent {
       title: 'Acceuil',
       url: '/home',
       icon: 'home'
-    },
+    }/*,
     {
       title: 'Nos Agences',
       url: '/agences',
       icon: 'list'
-    },
+    }*/,
     {
       title: 'Operation',
       url: '/operation',

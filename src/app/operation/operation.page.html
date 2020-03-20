@@ -3,14 +3,20 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
-      <ion-title>operation</ion-title>
+      <ion-title>Operation</ion-title>
     </ion-toolbar>
   
 </ion-header>
 
 <ion-content>
-    
-    <a href="tel:*444#"><ion-button expand="full" color="danger" style="margin-top: 50%">Deposer</ion-button></a>
+    <form action="https://paygateglobal.com/v1/page" method="GET" >
+      <input type="hidden" name="token" value="f24139d3-71f7-4912-b6d1-c19f93ce36d1">
+      <input type="hidden" name="amount" value="1">
+      <input type="hidden" name="identifier" value="1">
+      <input type="hidden" name="description" value="Confirmation de la réservation ">
+      <input type="hidden" name="url" value="http://127.0.0.1:8100/">
+    <ion-button expand="full" color="success" style="margin-top: 50%" (click)="openBlank()">Prendre</ion-button>
     <br>
-    <ion-button expand="full" color="success" [routerLink]="['/transaction']">Prendre</ion-button>
+    <ion-button expand="full" color="danger" (click)="openSystem()">Deposer</ion-button>
+    </form>
 </ion-content>
